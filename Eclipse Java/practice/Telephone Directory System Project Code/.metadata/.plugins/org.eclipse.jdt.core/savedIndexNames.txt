@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\Coding\Eclipse Java\practice\Telephone Directory System Project Code\.metadata\.plugins\org.eclipse.jdt.core
+1794832342.index
+760091825.index
+1865797976.index

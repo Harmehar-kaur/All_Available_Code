@@ -1,0 +1,5 @@
+package program_19.java;
+
+public class CustomException {
+
+}

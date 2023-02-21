@@ -1,0 +1,12 @@
+#include<stdio.h>
+#include<conio.h>
+#include<graphics.h>
+void main()
+{ int gd=DETECT,gm,i;
+  clrscr();
+  initgraph(&gd,&gm,"C\\:TURBOC3\\BGI");
+  for(i=100;i<400;i++)
+  putpixel(i,200,WHITE); // This is for Horizontal . For Vertical Swap i,200 in this line.
+  getch();
+  closegraph();
+}

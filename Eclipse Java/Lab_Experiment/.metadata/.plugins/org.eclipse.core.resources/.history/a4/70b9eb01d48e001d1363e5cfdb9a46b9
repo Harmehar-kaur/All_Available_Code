@@ -1,0 +1,10 @@
+package program_20.java;
+public class ProducerConsumerTest {
+	public static void main(String[] args) {
+		Shop s = new Shop();
+		Producer p1 = new Producer(ved, 1);
+		Consumer c1 = new Consumer(krs, 1);
+		p1.start(); 
+		c1.start();
+	}
+}

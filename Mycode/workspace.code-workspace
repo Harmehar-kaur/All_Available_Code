@@ -1,0 +1,9 @@
+{
+	"folders": [],
+	"settings": {
+		"files.associations": {
+			"*.c": "c",
+			"iostream": "cpp"
+		}
+	}
+}

@@ -1,0 +1,24 @@
+@keyframes bouncediv
+{
+    0%
+    {
+        transform: translateY(0px);
+    }
+    50%
+    {
+        margin-bottom:20px;
+    }
+    100%
+    {
+        transform:translateY(-100px);
+    }
+}
+#div1 {
+  height: 100px;
+  width: 100px;
+  position: relative;
+  top: 100px;
+  left: 100px;
+  background-color: aqua;
+  animation: bouncediv 0.1s ease-out 10 alternate;   
+}
