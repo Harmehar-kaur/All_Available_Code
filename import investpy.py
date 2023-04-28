@@ -1,0 +1,11 @@
+import investpy 
+# df=investpy.get_stock_historical_data(stock='NYSE', 
+#                                       country='United States',
+#                                       from_date='01/01/2020',
+#                                     to_date='01/01/2023')
+search_result = investpy.search_quotes(text='apple', products=['stocks'],
+                                       countries=['united states'], n_results=1)
+print(search_result)
+recent_data = search_result.retrieve_recent_data()
+historical_data = search_result.retrieve_historical_data(from_date='01/01/2020', to_date='01/01/2023')
+# print(df.head())
