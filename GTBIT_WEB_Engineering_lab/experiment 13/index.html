@@ -1,0 +1,146 @@
+HTML
+<!DOCTYPE html>
+<html> 
+<head> 
+    <title>
+        Dynamic Table | Experiment 13
+    </title>
+    <style>
+    *{
+        margin:0; 
+        box-sizing:border-box;
+    }
+    .clear:after{ 
+        content: ""; 
+        clear: both; 
+        display: block;
+    }
+    .float{
+        float:left;
+        width:300px;
+        background:black;
+        color:white;
+        border:1px white solid;
+        margin:10px;
+    }
+    .float2{
+        float:left;
+        width:400px;
+        background:black;
+        color:white;
+        border:1px white solid;
+        margin:10px;
+        height:111px;
+    }
+    select,button,input,label{
+        display:block;
+        margin:20px auto;
+    }
+    label{
+        line-height:30px;
+        font-size:20px;
+        text-align: center
+    }
+    input{
+        width:200px;
+    }
+    button{
+        width:200px;
+        line-height:50px;
+        font-size: 25px
+    }
+    select{
+        width:100px;
+    }
+    table{
+        margin:20px auto;
+        border:1px solid black;
+    }
+    th,td{
+        border:1px solid black;
+        padding:50px auto;
+    }
+    .create{
+        display: none;
+    }
+    </style>
+</head>
+<body>
+<div class="clear">
+    <div class="float2">
+        <label>Select Number of Rows (Including Header)</label>
+        <select class="rows">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+        </select>
+    </div>
+    <div class="float2">
+        <label>Select Number of Columns</label>
+        <select class="columns">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+        </select>
+    </div>
+    <div class="float2">
+        <button onclick="create()" class="start">Create Options</button>
+   	</div>
+</div>
+<div class="clear index"> 
+</div>
+<button onclick="somefunction()" class="create">Create Table</button>
+<label class="output"></label>
+<table cellpadding="20">
+</table>
+<script>
+    function create(){	
+        row=document.querySelector(".rows").value;
+        columns=document.querySelector(".columns").value;
+        td='';
+        td='<div class="float"><form><label>Header</label>'
+        for(i=1;i<=columns;i++)
+        td+="<input type='text' class='h"+i+"' placeholder='Enter Text'>";
+        td+="</form></div>";
+        if(row>1){	
+            for(i=2;i<=row;i++){	
+                td+='<div class="float"><form><label>Row-'+(i-1)+'</label>';
+                				for(j=1;j<=columns;j++)
+                                td+="<input type='text' class='r"+i+"c"+j+"' placeholder='Enter Text'>";
+                				td+="</form></div>";
+            				}
+        }
+        document.querySelector(".index").innerHTML=td;
+        document.querySelector(".create").style.display="block";
+    }
+    function somefunction(){
+        count=0;
+        var x=new Array(columns);
+        for(i=1;i<=columns;i++){
+            x[i]=document.querySelector(".h"+i).value;
+            if(x[i].trim()=='')
+            count=1;}
+            if(count==0){
+                var td='';
+                header='';
+            	for(i=1;i<=columns;i++)
+                td+="<th>"+x[i]+"</th>";
+            	header="<tr>"+td+"</tr>";
+            	if(row>1){	
+                    for(i=2;i<=row;i++){    	
+                        td='';
+                    	for(j=1;j<=columns;j++)
+                        td+="<td>"+document.querySelector(".r"+i+"c"+j).value+"</td>";
+                        header+="<tr>"+td+"</tr>";       
+                    }
+            	}
+            document.querySelector("table").innerHTML=header;
+        }
+        else
+            document.querySelector(".output").innerHTML="Enter Header for each column Atleast";
+    }
+</script>
+</body> 
+</html>

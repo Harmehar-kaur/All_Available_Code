@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>
+            Experiment 14 | JavaScript Print Numbers
+        </title>
+        <style>
+    		body{ font: 16px/normal Open Sans;}
+    		*{ margin:0; box-sizing:border-box;}
+    		h1{text-align:center}
+    		div{width:500px;margin:auto;}
+    		button,input,label{display:block;margin-top:20px;}
+    		label{line-height: 30px;font-size:20px}
+    		input{width:300px;}
+    		button{margin-bottom:10px; height:30px;}
+  	</style>
+    </head>
+    <body>
+        <h1>Print Numbers </h1>
+        <hr>
+        <div>
+            <label for=number>Numbers to be printed</label>
+            <input name="number" id="number" type="number" placeholder="Enter Upto the numbers to be printed "> 
+            <button onclick="printNumbers()">Print</button>
+            <ul type="none" id="list"></ul>
+        </div>
+        <hr>
+        <script>
+//             function addTaskToDOM(task){
+//                 const li= document.createElement('li');
+//                 li.innerHTML =`
+//                 <input type="checkbox" id="${task.id}" ${task.done ? 'checked' : ''} class="custom-checkbox">
+//                 <label for="${task.id}">${task.text}</label>
+//                 <i class="fa-solid fa-trash-can delete" data-id="${task.id}"></i>
+//                 `;
+
+//     taskList.append(li);
+// }
+            function printNumbers(){
+                var x=document.querySelector("#number").value;
+                var out =[]; 
+                for(let i=0; i<= x; i ++){
+                    out.push(i);
+                    
+                    
+            }
+            const li = document.createElement('li');
+                  li.innerHTML = `${i}`; 
+        }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dynamic Menu</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .container>ul {
+            margin: 0px 250px 0px 250px;
+        }
+
+        .container ul {
+            list-style: none;
+        }
+
+        .container ul li {
+            background: #000;
+            width: 150px;
+            border: 1px solid white;
+            line-height: 50px;
+            float: left;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        a {
+            display: block;
+        }
+
+        .container ul li:hover {
+            background-color: grey;
+        }
+
+        .dropdown-menu1 {
+            display: none;
+            position: relative;
+        }
+
+        .dropdown-menu2 {
+            display: none;
+            position: absolute;
+            top: 104px;
+            left: 154px;
+        }
+
+        .dropdown-menu3 {
+            display: none;
+            position: absolute;
+            top: 104px;
+            left: 154px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul class="dropdown-menu">
+            <li class="dropdown-submenu">
+                <a href="dropdown-submenu" onclick="clickFunction(this)">CSE 1</a>
+                <ul class="dropdown-menu1">
+                    <li>Students</li>
+                    <li>Subjects</li>
+                    <li class="dropdown-submenu1">
+                        <a href="dropdown-submenu1" onclick="clickFunction(this)">Faculty</a>
+                        <ul class="dropdown-menu2">
+                            <li>Mentor Batch-Wise</li>
+                            <li>HOD concerning Queries</li>
+                            <li class="dropdowm-submenu2">
+                                <a href="dropdown-submenu2" onclick="clickFunction(this)">Subject wise</a>
+                                <ul class="dropdown-menu3">
+                                    <li>Theory</li>
+                                    <li>Practical</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>CSE 2</li>
+        </ul>
+    </div>
+    <script>
+        function clickFunction(a, e) {
+            x = a.getAttribute("href");
+            y = document.querySelector("." + x).childNodes;
+            if (y[3].style.display == "block")
+                y[3].style.display = "none";
+            else
+                y[3].style.display = "block";
+            event.preventDefault();
+            event.stopPropagation();
+        }
+    </script>
+</body>
+</html>

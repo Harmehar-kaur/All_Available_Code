@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title> 
+            Experiment 15 |Javascript Simple Interest Calculator
+        </title>
+        <style>
+    		body{ font: 16px/normal Open Sans;}
+    		*{ margin:0; box-sizing:border-box;}
+    		h1{text-align:center}
+    		div{width:500px;margin:auto;}
+    		button,input,label{display:block;margin-top:20px;}
+    		label{line-height: 30px;font-size:20px}
+    		input{width:300px;}
+    		button{margin-bottom:10px; height:30px;}
+  	</style>
+
+    </head>
+    <body>
+        <h1>Interest Calculator </h1>
+        <hr>
+        <div>
+            <label for=amount>Amount</label>
+            <input name="amount" id="amount" type="number" placeholder="Enter Amount"> 
+            <label for=rate>Rate Of Interest</label>
+            <input name="rate" id="rate" type="number" placeholder="Enter Interest Rate"> 
+            <label for=time>Time Period(in Months)</label>
+            <input name="time" id="time" type="number" placeholder="Enter Time Period(in Months)"> 
+            <button onclick="calculate()">Calculate</button>
+            <label class="output"></label>
+        </div>
+        <hr>
+        <script>
+            function calculate(){
+                var x=document.querySelector("#amount").value;
+                var y=document.querySelector("#rate").value;
+                var z=document.querySelector("#time").value;
+                var regex=/^[0-9]|[0-9].[0-9]{1,}$/;
+                if(regex.test(x)&&regex.test(y)&&regex.test(z)){
+                    value=x*y*z/100;
+                    var out="The Interest amount is "+value;
+                    document.querySelector(".output").innerHTML=out;
+                }
+            }
+        </script>
+    </body>  
+</html>
