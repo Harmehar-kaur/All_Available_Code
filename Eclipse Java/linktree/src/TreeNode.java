@@ -5,8 +5,8 @@ class TreeNode <T>{
     ArrayList<TreeNode<T>> children;
     ArrayList<TreeNode<T>> next;
     public GenericTreeNode(data){
-        this.data = data //Node data
-        children = new ArrayList<>() //List of children nodes
+        this.data = data; //Node data
+        children = new ArrayList<>(); //List of children nodes
     }
     public void printTree(TreeNode root){
         //Not a base case but an edge case
@@ -37,13 +37,13 @@ class TreeNode <T>{
         return root;
     }
 
-    public void numNodes(TreeNode<Integer> root){
+    public int numNodes(TreeNode<Integer> root){
         if(root == null) { 
             return 0;
         }
         int ans = 1; // To store total count
         for (int i = 0; i < root.children.size(); i++) {
-            ans += numNodes(root.children[i]); // recursively storing count of children’s children nodes.
+            ans += numNodes(root.children); // recursively storing count of children’s children nodes.
         }
         return ans; 
     }

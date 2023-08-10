@@ -1,3 +1,4 @@
+ 
 public class LinkTree<T> {
     TreeNode<T> root;
 
