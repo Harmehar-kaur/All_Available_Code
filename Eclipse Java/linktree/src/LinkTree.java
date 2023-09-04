@@ -1,4 +1,4 @@
- 
+import package.LinkTree; 
 public class LinkTree<T> {
     TreeNode<T> root;
 
