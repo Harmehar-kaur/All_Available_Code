@@ -1,4 +1,4 @@
-# # data is divided into categories integer and strings namely some. strings are enclosed in double
+# data is divided into categories integer and strings namely some. strings are enclosed in double
 # # quotes. comments are used to increase the readability of the code, add some references to the code.
 # # There are two differrent types of comments: single line and multiple line comment. for single line
 # # use # for multiple use three single quotes to start and end the block of code to be commented.
@@ -111,11 +111,3 @@
 #     print("Even number!")
 # print("\n Harmehar Kaur AI Batch2")
 # print("\n The class titled class 1 and 2 are completed")
-
-
-a ='Hello Harman'
-b =1 
-c ='Hello Harman'
-
-if(c is not a): 
-    print('c is a')
